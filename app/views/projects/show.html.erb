@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @project.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @project.description %>
+</p>
+
+<p>
+  <strong>Percent complete:</strong>
+  <%= @project.percent_complete %>
+</p>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>
+
+<h2>Tasks for Projects</h2>
+
+<% @tasks.each do |task| %>
+  <%= link_to task.title , project_task_path(@project.id,task.id) %>
+  <br>
+  <br>
+<% end %>
+<br>
+<%= link_to 'Add a New Task for this Project', new_project_task_path(project_id: @project.id) %>
+

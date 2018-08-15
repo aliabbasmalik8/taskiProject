@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Taski</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+
+  <%= image_tag("logo.png", width: '150px',:align=>"middle") %> 
+  <br>
+
+
+  <%= render 'shared/nav' %>
+  <%= render 'shared/alerts'%>
+  <%= link_to 'Projects', projects_path %>
+    <%= yield %>
+  </body>
+</html>
